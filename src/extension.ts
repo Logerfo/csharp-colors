@@ -2,28 +2,64 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { DocumentHighlight } from './color-highlight';
+
+let instanceMap = null;
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+    instanceMap = [];
+    context.subscriptions.push(vscode.commands.registerTextEditorCommand("extension.colorHighlight", runHighlightEditorCommand));
+    onOpenEditor(vscode.window.visibleTextEditors);
+}
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "csharp-colors" is now active!');
+async function runHighlightEditorCommand(editor, edit, document) {
+    if (!document)
+        document = editor && editor.document;
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-        // The code you place here will be executed every time your command is executed
+    return doHighlight([document]);
+}
 
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
-    });
+async function doHighlight(documents = []) {
+    if (documents.length) {
+        const instances = await Promise.all(documents.map(findOrCreateInstance))
+        return instances.map(instance => instance.onUpdate());
 
-    context.subscriptions.push(disposable);
+    }
+}
+
+async function findOrCreateInstance(document) {
+    if (!document) {
+        return
+    }
+
+    const found = instanceMap.find(({ document: refDoc }) => refDoc === document);
+
+    if (!found) {
+        const instance = new DocumentHighlight(document);
+        instanceMap.push(instance);
+    }
+
+    return found || instanceMap[instanceMap.length - 1];
+}
+
+function onOpenEditor(editors) {
+    // dispose all inactive editors
+    const documents = editors.map(({ document }) => document);
+    const forDisposal = instanceMap.filter(({ document }) => documents.indexOf(document) === -1);
+
+    instanceMap = instanceMap.filter(({ document }) => documents.indexOf(document) > -1);
+    forDisposal.forEach(instance => instance.dispose());
+
+    // enable highlight in active editors
+    const validDocuments = documents.filter(doc => (<vscode.TextDocument>doc).languageId == "csharp");
+
+    doHighlight(validDocuments);
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+    instanceMap.forEach((instance) => instance.dispose());
+    instanceMap = null;
 }
