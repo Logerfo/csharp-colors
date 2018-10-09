@@ -1,6 +1,6 @@
 import Color = require('color');
 
-const argbRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-zA-Z_]+),\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*,\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*,\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*\)/g;
+const argbRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-fA-F_]+),\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
 
 export async function findARGB(text) {
     let match = argbRegex.exec(text);

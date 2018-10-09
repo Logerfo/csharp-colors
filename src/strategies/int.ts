@@ -1,6 +1,6 @@
 import Color = require('color');
 
-const hexRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*\)/g;
+const hexRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
 
 export async function findInt(text) {
     let match = hexRegex.exec(text);

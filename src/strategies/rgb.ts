@@ -1,6 +1,6 @@
 import Color = require('color');
 
-const rgbRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*,\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*,\s*(0[xXbB])?([0-9a-zA-Z_]+)\s*\)/g;
+const rgbRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
 
 export async function findRGB(text) {
     let match = rgbRegex.exec(text);
