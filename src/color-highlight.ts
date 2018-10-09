@@ -3,9 +3,7 @@ import * as vscode from 'vscode';
 import { findColor } from './strategies/color';
 import { findRGB } from './strategies/rgb';
 import { findARGB } from './strategies/argb';
-import { findHex } from './strategies/hex';
 import { findInt } from './strategies/int';
-import { findBinary } from './strategies/binary';
 import { DecorationMap } from './decoration-map';
 import { Disposable } from 'vscode';
 
@@ -19,7 +17,7 @@ export class DocumentHighlight {
     constructor(document) {
         this.disposed = false;
         this.document = document;
-        this.strategies = [findColor, findRGB, findARGB, findHex, findInt, findBinary];
+        this.strategies = [findColor, findRGB, findARGB, findInt];
         this.decorations = new DecorationMap();
         this.listner = vscode.workspace.onDidChangeTextDocument(({ document }) => this.onUpdate(document));
     }

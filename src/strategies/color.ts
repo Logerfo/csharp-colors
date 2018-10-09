@@ -1,7 +1,7 @@
 import Color = require('color');
 import colors = require('./colors.json');
 
-const colorRegex = /(?:Known)?Color\.([a-zA-Z]+)/g;
+const colorRegex = /(?:Known)?Color\s*\.\s*(\s*[a-zA-Z]+\s*)/g;
 
 export async function findColor(text) {
     let match = colorRegex.exec(text);
@@ -13,8 +13,11 @@ export async function findColor(text) {
         const end = colorRegex.lastIndex;
         const hex = colors[matchedColor];
         if (hex) {
-            const color = Color(hex).rgb().string();
-            result.push({ start, end, color });
+            try {
+                const color = Color(hex).rgb().string();
+                result.push({ start, end, color });
+            }
+            catch { }
         }
         match = colorRegex.exec(text);
     }
