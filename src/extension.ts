@@ -25,7 +25,6 @@ async function doHighlight(documents = []) {
     if (documents.length) {
         const instances = await Promise.all(documents.map(findOrCreateInstance))
         return instances.map(instance => instance.onUpdate());
-
     }
 }
 
