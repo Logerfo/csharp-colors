@@ -8,3 +8,6 @@ Initial release
 - Underscore (`_`) digit separator is now supported.
 - Whitespace between tokens are now supported.
 - Errors are not swallowed anymore. Previous code which used to depend on erros is now rewritten. No errors are expected. If you see any, please report.
+
+## 0.0.3
+Minor adjustments.
