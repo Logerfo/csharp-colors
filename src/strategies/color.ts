@@ -13,11 +13,8 @@ export async function findColor(text) {
         const end = colorRegex.lastIndex;
         const hex = colors[matchedColor];
         if (hex) {
-            try {
-                const color = Color(hex).rgb().string();
-                result.push({ start, end, color });
-            }
-            catch { }
+            const color = Color(hex).rgb().string();
+            result.push({ start, end, color });
         }
         match = colorRegex.exec(text);
     }
