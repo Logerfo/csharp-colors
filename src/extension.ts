@@ -11,6 +11,7 @@ let instanceMap = null;
 export function activate(context: vscode.ExtensionContext) {
     instanceMap = [];
     context.subscriptions.push(vscode.commands.registerTextEditorCommand("extension.colorHighlight", runHighlightEditorCommand));
+    vscode.window.onDidChangeVisibleTextEditors(onOpenEditor, null, context.subscriptions);
     onOpenEditor(vscode.window.visibleTextEditors);
 }
 
