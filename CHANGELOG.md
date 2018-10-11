@@ -11,3 +11,6 @@ Initial release
 
 ## 0.0.3
 Minor adjustments.
+
+## 0.0.4
+Fixed extension not working for files opened after the extension is loaded.
