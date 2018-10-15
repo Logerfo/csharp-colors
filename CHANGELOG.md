@@ -14,3 +14,6 @@ Minor adjustments.
 
 ## 0.0.4
 Fixed extension not working for files opened after the extension is loaded.
+
+## 0.0.5
+KnownColor now supports system colors, but with fixed colors based on mono, not getting the actual system color.
