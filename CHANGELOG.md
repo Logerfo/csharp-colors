@@ -19,5 +19,5 @@ Fixed extension not working for files opened after the extension is loaded.
 KnownColor now supports system colors, but with fixed colors based on mono, not getting the actual system color.
 
 ## 0.0.6
-The extension now has a preview icon.
+The extension now has a preview icon.  
 Minor adjustments.
