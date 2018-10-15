@@ -21,3 +21,6 @@ KnownColor now supports system colors, but with fixed colors based on mono, not 
 ## 0.0.6
 The extension now has a preview icon.  
 Minor adjustments.
+
+## 0.0.7
+Implemented support for `Color.FromName`, which works for the same names as `Color.?` and `KnownColor.?`, except `Transparent` and `Empty`.
