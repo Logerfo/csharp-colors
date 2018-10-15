@@ -1,5 +1,5 @@
 # C# Colors
-This extension is based on a similar [work](https://github.com/sergiirocks/vscode-ext-color-highlight) by [@sergiirocks](https://github.com/sergiirocks).
+This extension is based on a [similar work](https://github.com/sergiirocks/vscode-ext-color-highlight) by [@sergiirocks](https://github.com/sergiirocks).
 
 ## Features
 - `Color.FromARGB(int)`
