@@ -1,6 +1,6 @@
 'use strict';
 import * as vscode from 'vscode';
-import { findKnownColor } from './strategies/knowncolor';
+import { findSystemColor } from './strategies/systemcolor';
 import { findColor } from './strategies/color';
 import { findRGB } from './strategies/rgb';
 import { findARGB } from './strategies/argb';
@@ -18,7 +18,7 @@ export class DocumentHighlight {
     constructor(document) {
         this.disposed = false;
         this.document = document;
-        this.strategies = [findKnownColor, findColor, findRGB, findARGB, findInt];
+        this.strategies = [findSystemColor, findColor, findRGB, findARGB, findInt];
         this.decorations = new DecorationMap();
         this.listner = vscode.workspace.onDidChangeTextDocument(({ document }) => this.onUpdate(document));
     }

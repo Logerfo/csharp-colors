@@ -1,10 +1,9 @@
 import Color = require('color');
-import colors = require('./colors.json');
-import knownColors = require('./systemcolors.json');
+import systemColors = require('./systemcolors.json');
 
 const colorRegex = /KnownColor\s*\.\s*([a-zA-Z]+)/g;
 
-export async function findKnownColor(text) {
+export async function findSystemColor(text) {
     let match = colorRegex.exec(text);
     let result = [];
 
@@ -12,10 +11,7 @@ export async function findKnownColor(text) {
         const matchedColor = match[1];
         const start = match.index + (match[0].length - matchedColor.length);
         const end = colorRegex.lastIndex;
-        let hex = colors[matchedColor];
-        if (!hex) {
-            hex = knownColors[matchedColor];
-        }
+        const hex = systemColors[matchedColor];
         if (hex) {
             const color = Color(hex).rgb().string();
             result.push({ start, end, color });
