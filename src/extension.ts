@@ -10,7 +10,7 @@ let instanceMap = null;
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
     instanceMap = [];
-    context.subscriptions.push(vscode.commands.registerTextEditorCommand("extension.colorHighlight", runHighlightEditorCommand));
+    context.subscriptions.push(vscode.commands.registerTextEditorCommand("csharp-colors.colorHighlight", runHighlightEditorCommand));
     vscode.window.onDidChangeVisibleTextEditors(onOpenEditor, null, context.subscriptions);
     onOpenEditor(vscode.window.visibleTextEditors);
 }

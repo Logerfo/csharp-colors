@@ -33,7 +33,7 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.colorHighlight",
+                "command": "csharp-colors.colorHighlight",
                 "title": "Highlight colors in current file"
             }
         ]
