@@ -2,7 +2,7 @@
     "name": "csharp-colors",
     "displayName": "C# Colors",
     "description": "Highlight C# colors in your editor",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "logerfo",
     "engines": {
         "vscode": "^1.10.0"

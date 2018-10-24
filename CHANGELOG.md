@@ -24,3 +24,6 @@ Minor adjustments.
 
 ## 0.0.7
 Implemented support for `Color.FromName`, which works for the same names as `Color.?` and `KnownColor.?`, except `Transparent` and `Empty`.
+
+## 0.0.8
+Changed command from `extension.colorHighlight` to `csharp-colors.colorHighlight`.
