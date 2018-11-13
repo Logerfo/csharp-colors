@@ -1,3 +1,8 @@
+[![Version](https://vsmarketplacebadge.apphb.com/version-short/logerfo.csharp-colors.svg)](https://marketplace.visualstudio.com/items?itemName=logerfo.csharp-colors)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating-short/logerfo.csharp-colors.svg)](https://marketplace.visualstudio.com/items?itemName=logerfo.csharp-colors)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/logerfo.csharp-colors.svg)](https://marketplace.visualstudio.com/items?itemName=logerfo.csharp-colors)
+[![Build Status](https://travis-ci.org/Logerfo/csharp-colors.svg?branch=master)](https://travis-ci.org/Logerfo/csharp-colors)
+
 # C# Colors
 This extension is based on a [similar work](https://github.com/sergiirocks/vscode-ext-color-highlight) by [@sergiirocks](https://github.com/sergiirocks).
 
