@@ -53,6 +53,7 @@
     },
     "dependencies": {
         "color": "^3.0.0",
-        "color-name": "^1.1.4"
+        "color-name": "^1.1.4",
+        "ffi": "^2.2.0"
     }
 }
