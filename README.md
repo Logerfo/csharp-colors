@@ -23,7 +23,7 @@ Feel free to open any issues or pull requests. I will try to make time for them,
 
 ### Missing features
 #### `Color.FromARGB(int, Color)` when `Color` is highlighted.
-#### Known colors which varies by OS theme
+#### [Known colors which varies by OS theme](#2)
 Currently, Known system colors points to fixed colors based on mono. [See](https://github.com/mono/mono/blob/c5b88ec4f323f2bdb7c7d0a595ece28dae66579c/mcs/class/System.Drawing/System.Drawing/KnownColors.cs#L35).  
 I don't known if that's possible with the current VSCode API. [See](https://github.com/mono/mono/blob/c5b88ec4f323f2bdb7c7d0a595ece28dae66579c/mcs/class/System.Drawing/System.Drawing/KnownColors.cs#L232).
 
