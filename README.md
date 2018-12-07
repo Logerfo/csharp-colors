@@ -29,3 +29,9 @@ Currently, Known system colors points to fixed colors based on mono. [See](https
 I don't known if that's possible with the current VSCode API. [See](https://github.com/mono/mono/blob/c5b88ec4f323f2bdb7c7d0a595ece28dae66579c/mcs/class/System.Drawing/System.Drawing/KnownColors.cs#L232).
 
 ## [Release Notes](CHANGELOG.md)
+
+## Donate
+
+<img src="btc.png" width="200">
+
+BTC: 1LoGErFoNzE1gCA5fzk6A82nV6iJdKssSZ
