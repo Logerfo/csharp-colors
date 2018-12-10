@@ -4,6 +4,11 @@
     "description": "Highlight C# colors in your editor",
     "version": "0.0.8",
     "publisher": "logerfo",
+    "keywords": [
+        "c#",
+        "csharp",
+        "color"
+    ],
     "engines": {
         "vscode": "^1.10.0"
     },
