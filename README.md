@@ -32,6 +32,6 @@ I don't known if that's possible with the current VSCode API. [See](https://gith
 
 ## Donate
 
-<img src="btc.png" width="200">
+<img src="https://i.imgur.com/ndlBtuX.png" width="200">
 
 BTC: 1LoGErFoNzE1gCA5fzk6A82nV6iJdKssSZ
