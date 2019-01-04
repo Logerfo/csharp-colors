@@ -21,6 +21,10 @@
         "name": "Bruno Logerfo",
         "url": "https://github.com/Logerfo"
     },
+    "galleryBanner": {
+        "color": "#181818",
+        "theme": "dark"
+    },
     "icon": "icon.png",
     "license": "Unlicense",
     "homepage": "https://github.com/Logerfo/csharp-colors/blob/master/README.md",
