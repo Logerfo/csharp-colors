@@ -27,3 +27,6 @@ Implemented support for `Color.FromName`, which works for the same names as `Col
 
 ## 0.0.8
 Changed command from `extension.colorHighlight` to `csharp-colors.colorHighlight`.
+
+## 0.0.9
+Meta changes only.
