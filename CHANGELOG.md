@@ -30,3 +30,6 @@ Changed command from `extension.colorHighlight` to `csharp-colors.colorHighlight
 
 ## 0.0.9
 Meta changes only.
+
+## 0.1.0
+The extension is now only activated when a C# file is open, instead of starting up with VS Code. 
