@@ -36,7 +36,7 @@
         "Other"
     ],
     "activationEvents": [
-        "*"
+        "onLanguage:csharp"
     ],
     "main": "./out/extension",
     "contributes": {
