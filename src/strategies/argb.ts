@@ -1,73 +1,73 @@
 import Color = require('color');
 
-const argbRegex = /Color\s*\.\s*FromArgb\s*\(\s*(0[xXbB])?([0-9a-fA-F_]+),\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
+const argbRegex = /(Color\s*\.\s*FromArgb\s*\()\s*(0[xXbB])?([0-9a-fA-F_]+),\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
 
 export async function findARGB(text) {
     let match = argbRegex.exec(text);
     let result = [];
 
     while (match != null) {
-        const start = match.index + 15;
-        const end = argbRegex.lastIndex;
-        let Amodifier = match[1];
-        const match2 = match[2].replace("_", "");
+        const start = match.index + match[1].length;
+        const end = argbRegex.lastIndex - 1; //cuts the close parenthesis
+        let Amodifier = match[2];
+        const Avalue = match[3].replace("_", "");
         let matchedA: number;
         if (Amodifier) {
             Amodifier = Amodifier.toUpperCase();
             if (Amodifier.startsWith("0X"))
-                matchedA = parseInt(match2, 16);
+                matchedA = parseInt(Avalue, 16);
             else if (Amodifier.startsWith("0B"))
-                matchedA = parseInt(match2, 2);
+                matchedA = parseInt(Avalue, 2);
             else
                 throw new Error("This is not supposed to happen");
         }
         else
-            matchedA = +match2;
+            matchedA = +Avalue;
 
-        let Rmodifier = match[3];
-        const match4 = match[4].replace("_", "");
+        let Rmodifier = match[4];
+        const RValue = match[5].replace("_", "");
         let matchedR: number;
         if (Rmodifier) {
             Rmodifier = Rmodifier.toUpperCase();
             if (Rmodifier.startsWith("0X"))
-                matchedR = parseInt(match4, 16);
+                matchedR = parseInt(RValue, 16);
             else if (Rmodifier.startsWith("0B"))
-                matchedR = parseInt(match4, 2);
+                matchedR = parseInt(RValue, 2);
             else
                 throw new Error("This is not supposed to happen");
         }
         else
-            matchedR = +match4;
+            matchedR = +RValue;
 
-        let Gmodifier = match[5];
-        const match6 = match[6].replace("_", "");
+        let Gmodifier = match[6];
+        const Gvalue = match[7].replace("_", "");
         let matchedG: number;
         if (Gmodifier) {
             Gmodifier = Gmodifier.toUpperCase();
             if (Gmodifier.startsWith("0X"))
-                matchedG = parseInt(match6, 16);
+                matchedG = parseInt(Gvalue, 16);
             else if (Gmodifier.startsWith("0B"))
-                matchedG = parseInt(match6, 2);
+                matchedG = parseInt(Gvalue, 2);
             else
                 throw new Error("This is not supposed to happen");
         }
         else
-            matchedG = +match6;
+            matchedG = +Gvalue;
 
-        let Bmodifier = match[7];
-        const match8 = match[8].replace("_", "");
+        let Bmodifier = match[8];
+        const Bvalue = match[9].replace("_", "");
         let matchedB: number;
         if (Bmodifier) {
             Bmodifier = Bmodifier.toUpperCase();
             if (Bmodifier.startsWith("0X"))
-                matchedB = parseInt(match8, 16);
+                matchedB = parseInt(Bvalue, 16);
             else if (Bmodifier.startsWith("0B"))
-                matchedB = parseInt(match8, 2);
+                matchedB = parseInt(Bvalue, 2);
             else
                 throw new Error("This is not supposed to happen");
         }
         else
-            matchedB = +match8;
+            matchedB = +Bvalue;
 
         try {
             const color = Color(`rgba(${matchedR}, ${matchedG}, ${matchedB}, ${matchedA / 255})`).rgb().string();
