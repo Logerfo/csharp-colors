@@ -35,5 +35,5 @@ Meta changes only.
 The extension is now only activated when a C# file is open, instead of starting up with VS Code. 
 
 ## 0.1.1
-Fixed the close parenthesis being highlighted (`FromArgb`).
+Fixed the close parenthesis being highlighted (`FromArgb`).  
 Fixed misplaced highlight when the method invocation has valid whitespace (`FromArgb`).
