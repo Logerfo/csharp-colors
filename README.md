@@ -3,6 +3,7 @@
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/logerfo.csharp-colors.svg)](https://marketplace.visualstudio.com/items?itemName=logerfo.csharp-colors)
 [![Build Status](https://travis-ci.org/Logerfo/csharp-colors.svg?branch=master)](https://travis-ci.org/Logerfo/csharp-colors)
 [![Known Vulnerabilities](https://snyk.io/test/github/logerfo/csharp-colors/badge.svg)](https://snyk.io/test/github/logerfo/csharp-colors)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLogerfo%2Fcsharp-colors.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLogerfo%2Fcsharp-colors?ref=badge_shield)
 
 # C# Colors
 This extension is based on a [similar work](https://github.com/sergiirocks/vscode-ext-color-highlight) by [@sergiirocks](https://github.com/sergiirocks).
@@ -35,3 +36,7 @@ I don't known if that's possible with the current VSCode API. [See](https://gith
 <img src="https://i.imgur.com/ndlBtuX.png" width="200">
 
 BTC: 1LoGErFoNzE1gCA5fzk6A82nV6iJdKssSZ
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLogerfo%2Fcsharp-colors.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FLogerfo%2Fcsharp-colors?ref=badge_large)
