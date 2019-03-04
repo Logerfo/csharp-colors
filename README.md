@@ -5,6 +5,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/logerfo/csharp-colors/badge.svg)](https://snyk.io/test/github/logerfo/csharp-colors)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLogerfo%2Fcsharp-colors.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLogerfo%2Fcsharp-colors?ref=badge_shield)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Logerfo/csharp-colors.svg)](https://greenkeeper.io/)
+[![Dependencies Status](https://david-dm.org/logerfo/csharp-colors/dev-status.svg)](https://david-dm.org/logerfo/csharp-colors?type=dev)
 
 # C# Colors
 This extension is based on a [similar work](https://github.com/sergiirocks/vscode-ext-color-highlight) by [@sergiirocks](https://github.com/sergiirocks).
