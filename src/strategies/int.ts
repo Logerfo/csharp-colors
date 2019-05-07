@@ -1,4 +1,4 @@
-import Color = require('color');
+import Color = require("color");
 
 const hexRegex = /(Color\s*\.\s*FromArgb\s*\()\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
 

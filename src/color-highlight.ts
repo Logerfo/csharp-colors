@@ -1,13 +1,13 @@
-'use strict';
-import * as vscode from 'vscode';
-import { findSystemColor } from './strategies/systemcolor';
-import { findColor } from './strategies/color';
-import { findName } from './strategies/name';
-import { findRGB } from './strategies/rgb';
-import { findARGB } from './strategies/argb';
-import { findInt } from './strategies/int';
-import { DecorationMap } from './decoration-map';
-import { Disposable } from 'vscode';
+"use strict";
+import * as vscode from "vscode";
+import { findSystemColor } from "./strategies/systemcolor";
+import { findColor } from "./strategies/color";
+import { findName } from "./strategies/name";
+import { findRGB } from "./strategies/rgb";
+import { findARGB } from "./strategies/argb";
+import { findInt } from "./strategies/int";
+import { DecorationMap } from "./decoration-map";
+import { Disposable } from "vscode";
 
 export class DocumentHighlight {
     disposed: boolean;

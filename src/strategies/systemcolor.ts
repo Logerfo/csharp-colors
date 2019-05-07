@@ -1,5 +1,5 @@
-import Color = require('color');
-import systemColors = require('./systemcolors.json');
+import Color = require("color");
+import systemColors = require("./systemcolors.json");
 
 const colorRegex = /KnownColor\s*\.\s*([a-zA-Z]+)/g;
 
