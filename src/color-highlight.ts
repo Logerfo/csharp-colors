@@ -32,15 +32,16 @@ export class DocumentHighlight {
         const text = this.document.getText();
         const version = this.document.version.toString();
 
-        return this.updateRange(text, version)
+        return this.updateRange(text, version);
     }
 
     updateRange(text, version) {
         return Promise.all(this.strategies.map(fn => fn(text)))
             .then(result => {
                 const actualVersion = this.document.version.toString();
-                if (actualVersion === version)
+                if (actualVersion === version) {
                     return result;
+                }
             })
             .then(concatAll)
             .then(groupByColor)
@@ -71,7 +72,7 @@ export class DocumentHighlight {
                         .filter(({ document }) => document.uri === this.document.uri)
                         .forEach(editor => editor.setDecorations(decoration, updateStack[color]));
                 }
-            }).catch(error => { console.log(error) });
+            }).catch(error => { console.log(error); });
     }
 
     dispose() {
@@ -86,7 +87,7 @@ export class DocumentHighlight {
 }
 
 function groupByColor(results) {
-    if (results)
+    if (results) {
         return results.reduce((collection, item) => {
             if (!collection[item.color]) {
                 collection[item.color] = [];
@@ -96,9 +97,11 @@ function groupByColor(results) {
 
             return collection;
         }, {});
+    }
 }
 
 function concatAll(arr) {
-    if (arr)
-        return arr.reduce((result, item) => result.concat(item), [])
+    if (arr) {
+        return arr.reduce((result, item) => result.concat(item), []);
+    }
 }

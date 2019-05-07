@@ -30,17 +30,13 @@ const config = {
     extensions: ['.ts', '.js', 'jsx', 'tsx']
   },
   module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader'
-          }
-        ]
-      }
-    ]
+    rules: [{
+      test: /\.ts$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'ts-loader'
+      }]
+    }]
   }
 };
 module.exports = config;
