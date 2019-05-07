@@ -40,10 +40,12 @@
     ],
     "main": "./out/extension",
     "contributes": {
-        "commands": [{
-            "command": "csharp-colors.colorHighlight",
-            "title": "Highlight colors in current file"
-        }]
+        "commands": [
+            {
+                "command": "csharp-colors.colorHighlight",
+                "title": "Highlight colors in current file"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "webpack --mode production",
