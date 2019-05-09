@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
-import { DocumentHighlight } from './color-highlight';
+import * as vscode from "vscode";
+import { DocumentHighlight } from "./color-highlight";
 
 let instanceMap = null;
 
@@ -16,22 +16,23 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 async function runHighlightEditorCommand(editor, edit, document) {
-    if (!document)
+    if (!document) {
         document = editor && editor.document;
+    }
 
     return doHighlight([document]);
 }
 
 async function doHighlight(documents = []) {
     if (documents.length) {
-        const instances = await Promise.all(documents.map(findOrCreateInstance))
+        const instances = await Promise.all(documents.map(findOrCreateInstance));
         return instances.map(instance => instance.onUpdate());
     }
 }
 
 async function findOrCreateInstance(document) {
     if (!document) {
-        return
+        return;
     }
 
     const found = instanceMap.find(({ document: refDoc }) => refDoc === document);
@@ -53,7 +54,7 @@ function onOpenEditor(editors) {
     forDisposal.forEach(instance => instance.dispose());
 
     // enable highlight in active editors
-    const validDocuments = documents.filter(doc => (<vscode.TextDocument>doc).languageId == "csharp");
+    const validDocuments = documents.filter(doc => (<vscode.TextDocument>doc).languageId === "csharp");
 
     doHighlight(validDocuments);
 }
