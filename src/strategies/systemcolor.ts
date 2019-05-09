@@ -45,8 +45,8 @@ enum GetSysColorIndex {
     COLOR_MAXVALUE = 30, /* Maximum value */
 }
 
-const user32 = ffi.Library('user32', {
-    'GetSysColor': ['uint', ['int']]
+const user32 = ffi.Library("user32", {
+    GetSysColor: ["uint", ["int"]]
 });
 
 function GetSysColor(index: GetSysColorIndex): string {
