@@ -1,6 +1,6 @@
 import Color = require("color");
 import systemColors = require("./systemcolors.json");
-import ffi = require('ffi');
+import ffi = require("ffi");
 
 enum GetSysColorIndex {
     COLOR_SCROLLBAR = 0,
