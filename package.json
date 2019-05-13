@@ -45,7 +45,15 @@
                 "command": "csharp-colors.colorHighlight",
                 "title": "Highlight colors in current file"
             }
-        ]
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "csharp-colors.colorHighlight",
+                    "when": "false"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "webpack --mode production",
