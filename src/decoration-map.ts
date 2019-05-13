@@ -1,5 +1,5 @@
-'use strict';
-import * as vscode from 'vscode';
+"use strict";
+import * as vscode from "vscode";
 
 export class DecorationMap {
     _map: Map<any, any>;
@@ -13,7 +13,7 @@ export class DecorationMap {
     get(color) {
         if (!this._map.has(color)) {
             let rules: vscode.DecorationRenderOptions = {};
-            rules.color = 'invalid; border-bottom:solid 2px ' + color;
+            rules.color = "invalid; border-bottom:solid 2px " + color;
             this._map.set(color, vscode.window.createTextEditorDecorationType(rules));
             this._keys.push(color);
         }
