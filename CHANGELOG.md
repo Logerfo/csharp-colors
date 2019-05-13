@@ -52,3 +52,7 @@ Fixed misplaced highlight when the method invocation has valid whitespace (`From
 ## 0.1.2
 
 Performance improvements.
+
+## 0.1.3
+
+Removed the command from the palette.
