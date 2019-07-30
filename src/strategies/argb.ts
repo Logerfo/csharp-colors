@@ -1,6 +1,6 @@
 import Color = require("color");
 
-const argbRegex = /(Color\s*\.\s*FromArgb\s*\()\s*(0[xXbB])?([0-9a-fA-F_]+),\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
+const argbRegex = /(Color\s*\.\s*FromArgb\s*\()\s*(?:(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*)?(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*,\s*(0[xXbB])?([0-9a-fA-F_]+)\s*\)/g;
 
 export async function findARGB(text) {
     let match = argbRegex.exec(text);
@@ -10,22 +10,27 @@ export async function findARGB(text) {
         const start = match.index + match[1].length;
         const end = argbRegex.lastIndex - 1; //cuts the close parenthesis
         let Amodifier = match[2];
-        const Avalue = match[3].replace("_", "");
+        let Avalue = match[3];
         let matchedA: number;
-        if (Amodifier) {
-            Amodifier = Amodifier.toUpperCase();
-            if (Amodifier.startsWith("0X")) {
-                matchedA = parseInt(Avalue, 16);
-            } else if (Amodifier.startsWith("0B")) {
-                matchedA = parseInt(Avalue, 2);
-            } else {
-                throw new Error("This is not supposed to happen");
+        if (Avalue) {
+            Avalue = match[3].replace("_", "");
+            if (Amodifier) {
+                Amodifier = Amodifier.toUpperCase();
+                if (Amodifier.startsWith("0X")) {
+                    matchedA = parseInt(Avalue, 16);
+                } else if (Amodifier.startsWith("0B")) {
+                    matchedA = parseInt(Avalue, 2);
+                } else {
+                    throw new Error("This is not supposed to happen");
+                }
+            }
+            else {
+                matchedA = +Avalue;
             }
         }
         else {
-            matchedA = +Avalue;
+            matchedA = 255;
         }
-
         let Rmodifier = match[4];
         const RValue = match[5].replace("_", "");
         let matchedR: number;

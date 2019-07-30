@@ -3,7 +3,6 @@ import * as vscode from "vscode";
 import { findSystemColor } from "./strategies/systemcolor";
 import { findColor } from "./strategies/color";
 import { findName } from "./strategies/name";
-import { findRGB } from "./strategies/rgb";
 import { findARGB } from "./strategies/argb";
 import { findInt } from "./strategies/int";
 import { DecorationMap } from "./decoration-map";
@@ -19,7 +18,7 @@ export class DocumentHighlight {
     constructor(document) {
         this.disposed = false;
         this.document = document;
-        this.strategies = [findSystemColor, findColor, findName, findRGB, findARGB, findInt];
+        this.strategies = [findSystemColor, findColor, findName, findARGB, findInt];
         this.decorations = new DecorationMap();
         this.listner = vscode.workspace.onDidChangeTextDocument(({ document }) => this.onUpdate(document));
     }
