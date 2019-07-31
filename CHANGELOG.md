@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5 - 2019-07-31
+
+- Support for Unity static colors (#24).
+- Fixed some missing color names (`WhiteSmoke`, `Yellow` and `YellowGreen`).
+
 ## 0.1.4 - 2019-07-31
 
 - Support for Unity colors (#24).
