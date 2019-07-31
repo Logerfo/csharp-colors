@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.4 - 2019-07-31
+
+- Support for Unity colors (#24).
+  - `new Color(float, float, float)`.
+  - `new Color(float, float, float, float)`.
+  - Allows `UnityEngine.` leading qualifier.
+- Fixed `Color.FromArgb` (any overload) not allowing leading `+`.
+- Fixed `Color.FromArgb` not being highlighted when used with four arguments and there is one or more spaces before the first comma.
+- Source code is now more succinct and less error prone.
+
 ## 0.1.3 - 2019-05-13
 
 Removed the command from the palette.
