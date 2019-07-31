@@ -133,5 +133,8 @@
     "Turquoise": "#40E0D0",
     "Violet": "#EE82EE",
     "Wheat": "#F5DEB3",
-    "White": "#FFFFFF"
+    "White": "#FFFFFF",
+    "WhiteSmoke": "#F5F5F5",
+    "Yellow": "#FFFF00",
+    "YellowGreen": "#9ACD32"
 }
