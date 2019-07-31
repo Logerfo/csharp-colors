@@ -1,4 +1,15 @@
 {
+    "black": "#000000",
+    "blue": "#0000FF",
+    "cyan": "#00FFFF",
+    "gray": "#7F7F7F",
+    "green": "#00FF00",
+    "grey": "#7F7F7F",
+    "magenta": "#FF00FF",
+    "red": "#FF0000",
+    "white": "#FFFFFF",
+    "yellow": "#FFEA04",
+
     "AliceBlue": "#F0F8FF",
     "AntiqueWhite": "#FAEBD7",
     "Aqua": "#00FFFF",
