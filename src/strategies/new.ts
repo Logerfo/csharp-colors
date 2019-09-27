@@ -24,7 +24,7 @@ export async function findNew(text) {
         }
 
         try {
-            const color = Color(`rgba(${matchedR * 255}, ${matchedG * 255}, ${matchedB * 255}, ${matchedA})`).rgb().string();
+            const color = Color(`rgba(${Math.floor(matchedR * 255)}, ${Math.floor(matchedG * 255)}, ${Math.floor(matchedB * 255)}, ${matchedA})`).rgb().string();
             result.push({ start, end, color });
         }
         catch { }
