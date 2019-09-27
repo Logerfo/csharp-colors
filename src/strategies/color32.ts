@@ -28,10 +28,10 @@ export async function findColor32(text) {
         const start = match.index + match[1].length;
         const end = color32Regex.lastIndex - 1; //cuts the close parenthesis
 
-        let matchedA = parseArgument(2);
-        let matchedR = parseArgument(7);
-        let matchedG = parseArgument(12);
-        let matchedB = parseArgument(17);
+        let matchedR = parseArgument(2);
+        let matchedG = parseArgument(7);
+        let matchedB = parseArgument(12);
+        let matchedA = parseArgument(17);
 
         try {
             const color = Color(`rgba(${matchedR}, ${matchedG}, ${matchedB}, ${matchedA / 255})`).rgb().string();
