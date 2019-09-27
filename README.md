@@ -12,15 +12,15 @@ This extension is based on a [similar work](https://github.com/sergiirocks/vscod
 
 ## Features
 
-- `Color.FromARGB(int)`
-- `Color.FromARGB(int, int, int)`
-- `Color.FromARGB(int, int, int, int)`
+- `Color.FromARGB(int rgb)`
+- `Color.FromARGB(int r, int g, int b)`
+- `Color.FromARGB(int a, int r, int g, int b)`
 - `Color.?`
 - `KnownColor.?`
 - `Color.FromName("?")`
-- `new Color(float, float, float)`
-- `new Color(float, float, float, float)`
-- `new Color32(byte, byte, byte, byte)`
+- `new Color(float r, float g, float b)`
+- `new Color(float r, float g, float b, float a)`
+- `new Color32(byte r, byte g, byte b, byte a)`
 
 The `float` and `byte` overloads is meant to be used in Unity and allows the `UnityEngine.` leading qualifier.  
 Every `int` parameter works for decimal, binary and hex.  

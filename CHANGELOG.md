@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.7 - 2019-09-27
+
+- Support for zero-less float for `new Color` (e.g. `.5f`).
+- Fixed some float values being invalid for `new Color` because it would lead to a non-integer number when multiplied by 255. Those numbers are now floor rounded.
+- Fixed Unity's `new Color` and `new Color32` targeting `a, r, g, b` instead of `r, g, b, a` (#25).
+
 ## 0.1.6 - 2019-09-27
 
 - Support for Unity `Color32` (#25).
