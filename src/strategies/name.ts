@@ -4,7 +4,7 @@ import systemColors = require("./systemcolors.json");
 
 const colorRegex = /Color\s*\.\s*FromName\s*\(\s*"([a-zA-Z]+)"\s*\)/g;
 
-export async function findName(text) {
+export async function findName(text: string) {
     let match = colorRegex.exec(text);
     let result = [];
 

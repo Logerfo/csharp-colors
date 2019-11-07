@@ -3,7 +3,7 @@ import colors = require("./colors.json");
 
 const colorRegex = /Color\s*\.\s*([a-zA-Z]+)/g;
 
-export async function findColor(text) {
+export async function findColor(text: string) {
     let match = colorRegex.exec(text);
     let result = [];
 

@@ -17,7 +17,7 @@ export class DocumentHighlight {
     listner: Disposable;
     strategies: Function[];
 
-    constructor(document) {
+    constructor(document: vscode.TextDocument) {
         this.disposed = false;
         this.document = document;
         this.strategies = [findARGB, findColor, findColor32, findInt, findName, findNew, findSystemColor];
@@ -36,7 +36,7 @@ export class DocumentHighlight {
         return this.updateRange(text, version);
     }
 
-    updateRange(text, version) {
+    updateRange(text: string, version: string) {
         return Promise.all(this.strategies.map(fn => fn(text)))
             .then(result => {
                 const actualVersion = this.document.version.toString();
@@ -52,13 +52,13 @@ export class DocumentHighlight {
                 }
 
                 const updateStack = this.decorations._keys.slice()
-                    .reduce((state, color) => {
+                    .reduce((state: { [x: string]: any[]; }, color: string | number) => {
                         state[color] = [];
                         return state;
                     }, {});
 
                 for (const color in colorRanges) {
-                    updateStack[color] = colorRanges[color].map(item => {
+                    updateStack[color] = colorRanges[color].map((item: { start: number; end: number; }) => {
                         return new vscode.Range(
                             this.document.positionAt(item.start),
                             this.document.positionAt(item.end)
@@ -89,7 +89,7 @@ export class DocumentHighlight {
 
 function groupByColor(results) {
     if (results) {
-        return results.reduce((collection, item) => {
+        return results.reduce((collection: { [x: string]: any[]; }, item: { color: string | number; }) => {
             if (!collection[item.color]) {
                 collection[item.color] = [];
             }
@@ -103,6 +103,6 @@ function groupByColor(results) {
 
 function concatAll(arr) {
     if (arr) {
-        return arr.reduce((result, item) => result.concat(item), []);
+        return arr.reduce((result: { concat: (arg0: any) => void; }, item: any) => result.concat(item), []);
     }
 }

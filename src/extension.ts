@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
     onOpenEditor(vscode.window.visibleTextEditors);
 }
 
-async function runHighlightEditorCommand(editor, edit, document) {
+async function runHighlightEditorCommand(editor: vscode.TextEditor, edit: vscode.TextEditorEdit, document: vscode.TextDocument) {
     if (!document) {
         document = editor && editor.document;
     }
@@ -23,14 +23,14 @@ async function runHighlightEditorCommand(editor, edit, document) {
     return doHighlight([document]);
 }
 
-async function doHighlight(documents = []) {
+async function doHighlight(documents: vscode.TextDocument[] = []) {
     if (documents.length) {
         const instances = await Promise.all(documents.map(findOrCreateInstance));
         return instances.map(instance => instance.onUpdate());
     }
 }
 
-async function findOrCreateInstance(document) {
+async function findOrCreateInstance(document: vscode.TextDocument) {
     if (!document) {
         return;
     }
@@ -45,7 +45,7 @@ async function findOrCreateInstance(document) {
     return found || instanceMap[instanceMap.length - 1];
 }
 
-function onOpenEditor(editors) {
+function onOpenEditor(editors: vscode.TextEditor[]) {
     // dispose all inactive editors
     const documents = editors.map(({ document }) => document);
     const forDisposal = instanceMap.filter(({ document }) => documents.indexOf(document) === -1);

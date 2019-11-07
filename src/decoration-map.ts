@@ -10,7 +10,7 @@ export class DecorationMap {
         this._keys = [];
     }
 
-    get(color) {
+    get(color: string) {
         if (!this._map.has(color)) {
             let rules: vscode.DecorationRenderOptions = {};
             rules.color = "invalid; border-bottom:solid 2px " + color;

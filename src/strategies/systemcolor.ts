@@ -3,7 +3,7 @@ import systemColors = require("./systemcolors.json");
 
 const colorRegex = /KnownColor\s*\.\s*([a-zA-Z]+)/g;
 
-export async function findSystemColor(text) {
+export async function findSystemColor(text: string) {
     let match = colorRegex.exec(text);
     let result = [];
 
