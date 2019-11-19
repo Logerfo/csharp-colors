@@ -30,7 +30,7 @@
     "homepage": "https://github.com/Logerfo/csharp-colors/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Logerfo/csharp-colors.git"
+        "url": "https://github.com/Logerfo/csharp-colors.git"
     },
     "categories": [
         "Other"
