@@ -1,6 +1,6 @@
 import Color = require("color");
 
-const argbRegex = /(new\s*(?:UnityEngine\s*\.\s*)?Color\s*\()\s*\+?\s*((?:\.[0-9]?)?[0-9])[fF]\s*,\s*\+?\s*((?:\.[0-9]?)?[0-9])[fF]\s*,\s*\+?\s*((?:\.[0-9]?)?[0-9])[fF]\s*(?:,\s*\+?\s*((?:\.[0-9]?)?[0-9])[fF]\s*)?\)/g;
+const argbRegex = /(new\s*(?:UnityEngine\s*\.\s*)?Color\s*\()\s*\+?\s*([0-9]*\.?[0-9]+)[fF]\s*,\s*\+?\s*([0-9]*\.?[0-9]+)[fF]\s*,\s*\+?\s*([0-9]*\.?[0-9]+)[fF]\s*(?:,\s*\+?\s*([0-9]*\.?[0-9]+)[fF]\s*)?\)/g;
 
 export async function findNew(text: string) {
     let match = argbRegex.exec(text);
