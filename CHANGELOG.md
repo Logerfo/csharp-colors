@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8 - 2020-02-27
+
+- Fixed some cases where floating points was not correctly recognized (#29).
+
 ## 0.1.7 - 2019-09-27
 
 - Support for zero-less float for `new Color` (e.g. `.5f`).
