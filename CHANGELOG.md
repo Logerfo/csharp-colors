@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.8 - 2020-02-27
+## 0.1.8 - 2020-03-04
 
 - Fixed some cases where floating points was not correctly recognized (#29).
 
