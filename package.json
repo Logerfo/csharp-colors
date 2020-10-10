@@ -68,7 +68,7 @@
         "typescript": "4.0.3",
         "@types/vscode": "1.14.0",
         "webpack": "4.44.2",
-        "webpack-cli": "3.3.12"
+        "webpack-cli": "4.0.0"
     },
     "dependencies": {
         "color": "^3.0.0",
