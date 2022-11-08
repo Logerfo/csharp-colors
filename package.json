@@ -72,6 +72,6 @@
     },
     "dependencies": {
         "color": "^4.0.0",
-        "color-name": "^1.1.4"
+        "color-name": "^2.0.0"
     }
 }
