@@ -1,6 +1,6 @@
 import Color = require("color");
 
-const color32Regex = /(new\s*(?:UnityEngine\s*\.\s*)?Color32\s*\()\s*(?:\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*,\s*)?\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*,\s*\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*,\s*\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*\)/g;
+const color32Regex = /(?:(new\s*(?:UnityEngine\s*\.\s*)?Color32\s*|(?:UnityEngine\s*\.\s*)?Color32\s*@?[a-zA-Z_][a-zA-Z0-9_]*\s*=\s*new\s*)\()\s*(?:r\s*:\s*)?\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*,\s*(?:g\s*:\s*)?\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*,\s*(?:b\s*:\s*)?\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*,\s*(?:a\s*:\s*)?\+?\s*(?:(0[xX])([0-9a-fA-F_]+)|(0[bB])([01_]+)|([0-9_]+))\s*\)/g;
 
 export async function findColor32(text: string) {
     let match = color32Regex.exec(text);
