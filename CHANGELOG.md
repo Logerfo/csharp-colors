@@ -1,11 +1,11 @@
 # Changelog
 
-## 0.2.0 - 2023-07-09
+## 0.2.1 - 2023-07-09
 
 - Updated `Color.FromArgb()` overloads and `new Color()` and `new Color32()` constructors strategies to support leading argument names.
 - Updated `new Color()` and `new Color32()` constructors strategy to support target-typed `new` expressions.
 
-## 0.1.9 - Skipped
+## 0.1.9, 0.2.0 - Skipped
 
 - Publication error.
 
