@@ -10,7 +10,7 @@
         "color"
     ],
     "engines": {
-        "vscode": "^1.14.0"
+        "vscode": "^2023.0.0"
     },
     "bugs": {
         "url": "https://github.com/Logerfo/csharp-colors/issues",
