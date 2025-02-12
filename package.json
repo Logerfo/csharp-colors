@@ -71,7 +71,7 @@
         "webpack-cli": "6.0.1"
     },
     "dependencies": {
-        "color": "^4.0.0",
+        "color": "^5.0.0",
         "color-name": "^2.0.0"
     }
 }
